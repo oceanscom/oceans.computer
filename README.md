@@ -29,4 +29,10 @@ The files in `public/` can also be served directly by any static web host.
 
 ## Editing
 
-Edit the HTML or CSS directly and push to the connected branch. The approved original wave curves, spacing, and drift speeds are retained, with a subtle four-unit swell. All animation stops when reduced motion is preferred.
+Edit the HTML or CSS directly and push to the connected branch. The approved original wave curves, spacing, and drift speeds are retained, with a subtle four-unit swell. Visitors can pause all waves using the CSS-only checkbox in the footer. All animation stops automatically when reduced motion is preferred, and the redundant pause control is hidden.
+
+In forced-colour/high-contrast mode, the decorative waves and fixed-colour logo image are hidden; the Oceans wordmark and content use the visitor's system colours.
+
+## Deployment headers
+
+`vercel.json` sets a Content Security Policy that permits only local images and styles, disables MIME sniffing, and omits outgoing referrer information. Adding scripts, forms, third-party assets, or embedded content requires reviewing this policy. Other static hosts should apply the same headers in their own configuration.

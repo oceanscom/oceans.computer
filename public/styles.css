@@ -40,6 +40,8 @@ html, body { margin: 0; min-width: 280px; }
 .wave-swell { animation: swell 20s ease-in-out infinite; }
 .wave--2 .wave-swell { animation-duration: 26s; }
 .wave--3 .wave-swell { animation-duration: 32s; }
+body:has(#pause-waves:checked) .wave,
+body:has(#pause-waves:checked) .wave-swell { animation-play-state: paused; }
 @keyframes swell {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-4px); }
@@ -97,6 +99,18 @@ h1 {
 .github:hover { color: var(--ink); text-decoration: underline; }
 .github:hover svg { transform: translate(2px, -2px); }
 .github:focus-visible { outline: 1px solid var(--accent); outline-offset: 7px; }
+.footer-controls { display: flex; align-items: center; gap: 24px; }
+.motion-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 24px;
+  color: var(--muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+.motion-control input { margin: 0; accent-color: var(--accent); }
+.motion-control input:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
 @media (max-width: 620px) {
   .wave-field { inset-block-start: 48%; opacity: .75; }
   .page { width: calc(100% - 56px); padding-block: 33px; }
@@ -109,6 +123,7 @@ h1 {
   .wide-break { display: none; }
   .signoff { font-size: 9px; }
   .footer { gap: 14px; }
+  .footer-controls { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 @media (max-width: 360px) {
   .page { width: calc(100% - 44px); }
@@ -119,8 +134,13 @@ h1 {
   .page { padding-block: 25px; }
   .intro { padding-block: 32px; }
 }
+@media (forced-colors: active) {
+  .wave-field, .brand img, .motion-control { display: none; }
+  .wave, .wave-swell { animation: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
   .wave { animation: none; will-change: auto; }
   .wave-swell { animation: none; }
+  .motion-control { display: none; }
 }
