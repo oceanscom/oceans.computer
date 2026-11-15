@@ -29,7 +29,7 @@ The files in `public/` can also be served directly by any static web host.
 
 ## Editing
 
-Edit the HTML or CSS directly and push to the connected branch. The approved original wave curves, spacing, and drift speeds are retained, with a subtle four-unit swell. Visitors can pause all waves using the CSS-only checkbox in the footer. All animation stops automatically when reduced motion is preferred, and the redundant pause control is hidden.
+Edit the HTML or CSS directly and push to the connected branch. The approved original wave curves, spacing, and drift speeds are retained, with a subtle four-unit swell. All animation stops automatically when the visitor’s device prefers reduced motion.
 
 In forced-colour/high-contrast mode, the decorative waves and fixed-colour logo image are hidden; the Oceans wordmark and content use the visitor's system colours.
 
